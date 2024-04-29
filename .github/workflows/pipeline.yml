@@ -99,6 +99,7 @@ jobs:
     needs: [test, e2e]
     runs-on: ubuntu-latest
     steps:
+      - echo: "Hola"
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
