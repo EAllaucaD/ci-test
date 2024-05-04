@@ -99,15 +99,9 @@ jobs:
     needs: [test, e2e]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Deploy to Heroku
+      - name: Deploy to Railway
         if: ${{ github.event_name == 'push' }}
-        uses: akhileshns/heroku-deploy@v3.12.12
+        uses: bervProject/railway-deploy@main
         with:
-          heroku_api_key: ${{HRKU-107770d8-6218-4c89-8fee-f3fcd8720456}}
-          heroku_app_name: ${{secrets.HEROKU_APP}}
-          heroku_email: ${{edallaucav@uce.edu.ec}}
-          healthcheck: "https://${{secrets.HEROKU_APP}}.herokuapp.com/health"
-          rollbackonhealthcheckfailed: true
+          railway_token: ${{ secrets.SECRET_POKEMON}}
+          service: "Pokemon-proyect"
