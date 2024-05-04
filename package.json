@@ -9,7 +9,7 @@
     "start": "node app.js",
     "test": "jest",
     "eslint": "eslint .",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode production",
+    "build": "webpack --mode production",
     "test:e2e": "npx cypress run"
   },
   "repository": {
